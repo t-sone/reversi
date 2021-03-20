@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import valueit.co.jp.reversi.domain.model.board.Board;
+import valueit.co.jp.reversi.domain.model.board.BoardFactory;
 import valueit.co.jp.reversi.domain.model.board.StartPosition;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -32,7 +33,7 @@ public class StartPositionServiceTest {
         return Stream.of(arguments(StartPosition.historical,
                                    "[]"),
                          arguments(StartPosition.normal,
-                                   "[{light:(d, 4)}, {dark:(e, 4)}, {dark: (d, 5)}, {light: (e, 5)}]")
+                                   "[{light: (d, 4)}, {dark: (e, 4)}, {dark: (d, 5)}, {light: (e, 5)}]")
         );
     }
 
@@ -50,7 +51,12 @@ public class StartPositionServiceTest {
     static class TestConfig {
         @Bean
         StartPositionService service() {
-            return new StartPositionService();
+            return new StartPositionService(boardFactory());
+        }
+
+        @Bean
+        BoardFactory boardFactory() {
+            return new BoardFactory();
         }
     }
 }
