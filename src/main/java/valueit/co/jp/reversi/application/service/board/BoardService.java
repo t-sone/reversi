@@ -1,4 +1,4 @@
-package valueit.co.jp.reversi.application.service;
+package valueit.co.jp.reversi.application.service.board;
 
 import org.springframework.stereotype.Service;
 
@@ -7,15 +7,15 @@ import valueit.co.jp.reversi.domain.model.board.BoardFactory;
 import valueit.co.jp.reversi.domain.model.board.StartPosition;
 
 @Service
-public class StartPositionService {
+public class BoardService {
 
     final BoardFactory factory;
 
-    public Board get(StartPosition startPositiion) {
-        return factory.create(startPositiion);
+    public Board start(StartPosition startPosition) {
+        return factory.create(startPosition);
     }
 
-    public StartPositionService(BoardFactory factory) {
+    public BoardService(BoardFactory factory) {
         this.factory = factory;
     }
 }

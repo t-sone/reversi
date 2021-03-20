@@ -13,6 +13,7 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import valueit.co.jp.reversi.application.service.board.BoardService;
 import valueit.co.jp.reversi.domain.model.board.Board;
 import valueit.co.jp.reversi.domain.model.board.BoardFactory;
 import valueit.co.jp.reversi.domain.model.board.StartPosition;
@@ -24,10 +25,10 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @ExtendWith(SpringExtension.class)
 @TestInstance(PER_CLASS)
-public class StartPositionServiceTest {
+public class BoardServiceTest {
 
     @Autowired
-    StartPositionService service;
+    BoardService service;
 
     Stream<Arguments> 初期状態の盤面一覧() {
         return Stream.of(arguments(StartPosition.historical,
@@ -42,7 +43,7 @@ public class StartPositionServiceTest {
     public void 初期状態の盤面を取得する(
             StartPosition startPosition,
             String 期待する盤面) {
-        Board board = service.get(startPosition);
+        Board board = service.start(startPosition);
         assertThat(board.toString(), is(期待する盤面));
     }
 
@@ -50,8 +51,8 @@ public class StartPositionServiceTest {
     @EnableConfigurationProperties
     static class TestConfig {
         @Bean
-        StartPositionService service() {
-            return new StartPositionService(boardFactory());
+        BoardService service() {
+            return new BoardService(boardFactory());
         }
 
         @Bean
