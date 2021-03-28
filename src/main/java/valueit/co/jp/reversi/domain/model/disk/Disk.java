@@ -2,18 +2,18 @@ package valueit.co.jp.reversi.domain.model.disk;
 
 public class Disk {
 
-    private final DiskColor color;
+    private final Side color;
 
-    public Disk(DiskColor color) {
+    public Disk(Side color) {
         this.color = color;
     }
 
     public static Disk ofLight() {
-        return new Disk(DiskColor.light);
+        return new Disk(Side.light);
     }
 
     public static Disk ofDark() {
-        return new Disk(DiskColor.dark);
+        return new Disk(Side.dark);
     }
 
     @Override
