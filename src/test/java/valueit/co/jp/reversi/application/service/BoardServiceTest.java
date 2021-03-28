@@ -31,9 +31,9 @@ public class BoardServiceTest {
     BoardService service;
 
     Stream<Arguments> 初期状態の盤面一覧() {
-        return Stream.of(arguments(StartPosition.historical,
+        return Stream.of(arguments(StartPosition.original,
                                    "[]"),
-                         arguments(StartPosition.normal,
+                         arguments(StartPosition.othello,
                                    "[{light: (d, 4)}, {dark: (e, 4)}, {dark: (d, 5)}, {light: (e, 5)}]")
         );
     }

@@ -12,7 +12,7 @@ import valueit.co.jp.reversi.domain.model.piece.PieceVertical;
 @Component
 public class BoardFactory {
     public Board create(StartPosition startPosition) {
-        return startPosition.isNormal() ?
+        return startPosition.isOthello() ?
                Board.of(diagonalPieces()) : Board.empty();
     }
 
