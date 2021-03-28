@@ -1,6 +1,6 @@
-package valueit.co.jp.reversi.domain.model.piece;
+package valueit.co.jp.reversi.domain.model.board.piece;
 
-import valueit.co.jp.reversi.domain.model.disk.Disk;
+import valueit.co.jp.reversi.domain.model.player.disk.Disk;
 
 public class Piece {
     private final PieceHorizontal horizontal;

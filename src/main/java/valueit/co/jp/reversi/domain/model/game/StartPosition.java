@@ -1,4 +1,4 @@
-package valueit.co.jp.reversi.domain.model.board;
+package valueit.co.jp.reversi.domain.model.game;
 
 public enum StartPosition {
     original, othello;

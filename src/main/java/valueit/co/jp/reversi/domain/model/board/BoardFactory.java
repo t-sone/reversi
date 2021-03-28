@@ -4,24 +4,27 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import valueit.co.jp.reversi.domain.model.disk.Disk;
-import valueit.co.jp.reversi.domain.model.piece.Piece;
-import valueit.co.jp.reversi.domain.model.piece.PieceHorizontal;
-import valueit.co.jp.reversi.domain.model.piece.PieceVertical;
+import valueit.co.jp.reversi.domain.model.game.StartPosition;
+import valueit.co.jp.reversi.domain.model.player.disk.Disk;
+import valueit.co.jp.reversi.domain.model.board.piece.Piece;
+import valueit.co.jp.reversi.domain.model.board.piece.PieceHorizontal;
+import valueit.co.jp.reversi.domain.model.board.piece.PieceVertical;
+import valueit.co.jp.reversi.domain.model.player.Players;
 
 @Component
 public class BoardFactory {
-    public Board create(StartPosition startPosition) {
+    public Board create(StartPosition startPosition,
+                        Players players) {
         return startPosition.isOthello() ?
-               Board.of(diagonalPieces()) : Board.empty();
+               Board.of(diagonalPieces(players)) : Board.empty();
     }
 
-    private List<Piece> diagonalPieces() {
+    private List<Piece> diagonalPieces(Players players) {
         return List.of(
-                createPiece(4, 4, Disk.ofLight()),
-                createPiece(5, 4, Disk.ofDark()),
-                createPiece(4, 5, Disk.ofDark()),
-                createPiece(5, 5, Disk.ofLight())
+                createPiece(4, 4, players.light().takeDisk()),
+                createPiece(5, 4, players.dark().takeDisk()),
+                createPiece(4, 5, players.dark().takeDisk()),
+                createPiece(5, 5, players.light().takeDisk())
         );
     }
 
