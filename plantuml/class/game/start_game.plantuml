@@ -1,0 +1,39 @@
+@startuml
+
+class Game
+Game -- StartPosition
+Game -- Players
+Game -- Board
+
+enum StartPosition {
+  original
+  othello
+}
+
+class Players {
+  - light: Player
+  - dark: Player
+}
+
+class GameService {
+  start(StartPosition) : Game
+}
+StartPosition -- GameService
+GameService *-- BoardFactory
+GameService *-- PlayersFactory
+GameService ..> Game
+
+class BoardFactory {
+  create(StartPosition, Players) : Board
+}
+StartPosition -- BoardFactory
+BoardFactory -- Players
+Board <. BoardFactory
+
+class PlayersFactory {
+  create() : Players
+}
+Players <. PlayersFactory
+
+
+@enduml

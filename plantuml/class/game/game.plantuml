@@ -1,0 +1,44 @@
+@startuml
+
+class Game
+Game -- StartPosition
+Game -- Players
+Game -- Board
+
+enum StartPosition {
+  original
+  othello
+}
+
+class Players {
+  - light: Player
+  - dark: Player
+}
+Players --{ "2" Player
+
+class Player {
+  - disks: List<Disk>
+}
+Player *-- Side
+Player --{ "0..32" Disk
+
+enum Side {
+  light
+  dark
+}
+
+class Disk
+Disk *-- Side
+
+class Board {
+  - pieces: List<Piece>
+}
+Board --{ "64" Piece
+
+class Piece {
+  - horizontal: PieceHorizontal
+  - vertical: PieceVertical
+}
+Piece -- Disk
+
+@enduml
