@@ -1,5 +1,5 @@
 package valueit.co.jp.reversi.domain.model.disk;
 
-public enum DiskColor {
+public enum Side {
     dark, light
 }
