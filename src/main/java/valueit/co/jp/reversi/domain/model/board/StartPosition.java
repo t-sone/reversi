@@ -1,13 +1,9 @@
 package valueit.co.jp.reversi.domain.model.board;
 
 public enum StartPosition {
-    normal, historical;
+    original, othello;
 
-    public boolean isNormal() {
-        return this == normal;
-    }
-
-    public boolean isHistorical() {
-        return this == historical;
+    public boolean isOthello() {
+        return this == othello;
     }
 }
