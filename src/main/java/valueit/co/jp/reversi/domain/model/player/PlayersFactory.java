@@ -6,8 +6,7 @@ import java.util.stream.IntStream;
 
 import org.springframework.stereotype.Component;
 
-import valueit.co.jp.reversi.domain.model.disk.Disk;
-import valueit.co.jp.reversi.domain.model.disk.Side;
+import valueit.co.jp.reversi.domain.model.player.disk.Disk;
 
 @Component
 public class PlayersFactory {

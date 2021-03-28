@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import valueit.co.jp.reversi.domain.model.disk.Disk;
-import valueit.co.jp.reversi.domain.model.piece.Piece;
-import valueit.co.jp.reversi.domain.model.piece.PieceHorizontal;
-import valueit.co.jp.reversi.domain.model.piece.PieceVertical;
+import valueit.co.jp.reversi.domain.model.game.StartPosition;
+import valueit.co.jp.reversi.domain.model.player.disk.Disk;
+import valueit.co.jp.reversi.domain.model.board.piece.Piece;
+import valueit.co.jp.reversi.domain.model.board.piece.PieceHorizontal;
+import valueit.co.jp.reversi.domain.model.board.piece.PieceVertical;
 import valueit.co.jp.reversi.domain.model.player.Players;
 
 @Component

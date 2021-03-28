@@ -3,8 +3,7 @@ package valueit.co.jp.reversi.domain.model.player;
 import java.util.ArrayList;
 import java.util.List;
 
-import valueit.co.jp.reversi.domain.model.disk.Disk;
-import valueit.co.jp.reversi.domain.model.disk.Side;
+import valueit.co.jp.reversi.domain.model.player.disk.Disk;
 
 public class Player {
     public static final int MAX_DISK_COUNT = 32;

@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import valueit.co.jp.reversi.domain.model.board.Board;
 import valueit.co.jp.reversi.domain.model.board.BoardFactory;
-import valueit.co.jp.reversi.domain.model.board.StartPosition;
+import valueit.co.jp.reversi.domain.model.game.StartPosition;
 import valueit.co.jp.reversi.domain.model.game.Game;
 import valueit.co.jp.reversi.domain.model.player.Players;
 import valueit.co.jp.reversi.domain.model.player.PlayersFactory;

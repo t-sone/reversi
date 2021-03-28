@@ -1,4 +1,4 @@
-package valueit.co.jp.reversi.domain.model.piece;
+package valueit.co.jp.reversi.domain.model.board.piece;
 
 public class PieceHorizontal {
     private final int value;

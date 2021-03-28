@@ -3,7 +3,7 @@ package valueit.co.jp.reversi.domain.model.board;
 import java.util.ArrayList;
 import java.util.List;
 
-import valueit.co.jp.reversi.domain.model.piece.Piece;
+import valueit.co.jp.reversi.domain.model.board.piece.Piece;
 
 public class Board {
     private final List<Piece> pieces;

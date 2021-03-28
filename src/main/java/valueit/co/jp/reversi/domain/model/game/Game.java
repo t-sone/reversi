@@ -1,7 +1,6 @@
 package valueit.co.jp.reversi.domain.model.game;
 
 import valueit.co.jp.reversi.domain.model.board.Board;
-import valueit.co.jp.reversi.domain.model.board.StartPosition;
 import valueit.co.jp.reversi.domain.model.player.Player;
 import valueit.co.jp.reversi.domain.model.player.Players;
 

@@ -1,4 +1,6 @@
-package valueit.co.jp.reversi.domain.model.disk;
+package valueit.co.jp.reversi.domain.model.player.disk;
+
+import valueit.co.jp.reversi.domain.model.player.Side;
 
 public class Disk {
 
