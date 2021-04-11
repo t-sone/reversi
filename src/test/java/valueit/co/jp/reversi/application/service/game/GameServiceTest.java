@@ -30,14 +30,13 @@ public class GameServiceTest {
     GameService service;
 
     Stream<Arguments> 初期状態の盤面一覧() {
-        return Stream.of(arguments(StartPosition.original,
-                                   32,
-                                   32,
-                                   "[]"),
-                         arguments(StartPosition.othello,
-                                   30,
-                                   30,
-                                   "[{light: (d, 4)}, {dark: (e, 4)}, {dark: (d, 5)}, {light: (e, 5)}]")
+        return Stream.of(
+                arguments(StartPosition.original,
+                        32, 32,
+                        "[]"),
+                arguments(StartPosition.othello,
+                        30, 30,
+                        "[{d4: light}, {e4: dark}, {d5: dark}, {e5: light}]")
         );
     }
 
@@ -60,8 +59,7 @@ public class GameServiceTest {
     static class TestConfig {
         @Bean
         GameService service() {
-            return new GameService(playersFactory(),
-                                   boardFactory());
+            return new GameService(playersFactory(), boardFactory());
         }
 
         @Bean

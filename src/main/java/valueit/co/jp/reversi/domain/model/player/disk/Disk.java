@@ -10,6 +10,10 @@ public class Disk {
         this.side = side;
     }
 
+    public Side side() {
+        return side;
+    }
+
     @Override
     public String toString() {
         return side.name();

@@ -4,11 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import valueit.co.jp.reversi.domain.model.board.grid.Grid;
 import valueit.co.jp.reversi.domain.model.game.StartPosition;
 import valueit.co.jp.reversi.domain.model.player.disk.Disk;
 import valueit.co.jp.reversi.domain.model.board.piece.Piece;
-import valueit.co.jp.reversi.domain.model.board.piece.PieceHorizontal;
-import valueit.co.jp.reversi.domain.model.board.piece.PieceVertical;
 import valueit.co.jp.reversi.domain.model.player.Players;
 
 @Component
@@ -16,7 +15,7 @@ public class BoardFactory {
     public Board create(StartPosition startPosition,
                         Players players) {
         return startPosition.isOthello() ?
-               Board.of(diagonalPieces(players)) : Board.empty();
+                Board.of(diagonalPieces(players)) : Board.empty();
     }
 
     private List<Piece> diagonalPieces(Players players) {
@@ -29,8 +28,6 @@ public class BoardFactory {
     }
 
     private Piece createPiece(int horizontal, int vertical, Disk disk) {
-        return new Piece(new PieceHorizontal(horizontal),
-                         new PieceVertical(vertical),
-                         disk);
+        return new Piece(new Grid(horizontal, vertical), disk.side());
     }
 }
