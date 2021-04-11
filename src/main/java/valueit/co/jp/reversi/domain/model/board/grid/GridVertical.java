@@ -1,9 +1,9 @@
-package valueit.co.jp.reversi.domain.model.board.piece;
+package valueit.co.jp.reversi.domain.model.board.grid;
 
-public class PieceVertical {
+public class GridVertical {
     private final int value;
 
-    public PieceVertical(Integer value) {
+    public GridVertical(Integer value) {
         this.value = value;
     }
 
